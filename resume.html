@@ -3,95 +3,151 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Karthik Sridatta | Resume</title>
+  <title>Karthik Sridatta | AI Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <style>
     :root{
-      --bg:#0b1220;
-      --panel:#111a2d;
-      --panel-2:#19253f;
-      --line:#2b3958;
-      --text:#e8eefc;
-      --muted:#a7b4ce;
-      --accent:#2fbf9f;
-      --chip:#0f1a30;
-      --btn-text:#08251f;
+      --bg:#070a14;
+      --panel:#10162a;
+      --panel-2:#172241;
+      --text:#edf3ff;
+      --muted:#9aabca;
+      --accent:#4cf4e1;
+      --accent-2:#6ea7ff;
+      --line:#2a3a61;
+      --chip:#121d35;
+      --shadow:0 16px 34px rgba(2,8,22,.45);
     }
     :root[data-theme="light"]{
-      --bg:#eef3fb;
+      --bg:#eff4ff;
       --panel:#ffffff;
-      --panel-2:#f5f9ff;
-      --line:#cad7ea;
-      --text:#12213b;
-      --muted:#4a5e82;
-      --accent:#067a67;
-      --chip:#f4f8ff;
-      --btn-text:#f2fffb;
+      --panel-2:#f4f8ff;
+      --text:#101c37;
+      --muted:#53698d;
+      --accent:#0a7d6f;
+      --accent-2:#2b66cb;
+      --line:#c9d8f1;
+      --chip:#edf3ff;
+      --shadow:0 12px 24px rgba(32,62,112,.14);
     }
-    html,body{
-      margin:0;
-      font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family:"Sora",Segoe UI,Roboto,Arial,sans-serif;
       background:
-        radial-gradient(circle at 100% 0%, #1b2a4b 0%, transparent 38%),
-        radial-gradient(circle at 0% 100%, #103f4b 0%, transparent 34%),
+        radial-gradient(circle at 100% 0%, rgba(110,167,255,.24), transparent 36%),
+        radial-gradient(circle at 0% 100%, rgba(76,244,225,.2), transparent 32%),
         var(--bg);
       color:var(--text);
       transition:background-color .25s ease,color .25s ease;
     }
-    .wrap{max-width:1060px;margin:0 auto;padding:24px 16px 36px}
-    .top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
-    .name{margin:0;font-size:1.5rem}
-    .role{margin:6px 0 0;color:var(--muted)}
+    .wrap{max-width:1140px;margin:0 auto;padding:24px 16px 42px}
+    .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+    .title p{margin:0;font-family:"JetBrains Mono",monospace;color:var(--accent);font-size:.79rem}
+    .title h1{margin:8px 0 0;font-size:1.95rem}
+    .title .role{margin:8px 0 0;color:var(--muted);font-size:.94rem}
+
     .nav-wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    nav{display:flex;gap:12px;flex-wrap:wrap}
-    nav a{color:var(--accent);text-decoration:none;font-weight:600}
-    .theme-toggle{background:var(--chip);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px 10px;font-weight:600;cursor:pointer}
-    .actions{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 13px;border-radius:8px;text-decoration:none;font-weight:700}
-    .btn-primary{background:var(--accent);color:var(--btn-text)}
-    .btn-secondary{background:var(--chip);border:1px solid var(--line);color:var(--text)}
-    .contact{margin:12px 0 0;display:flex;gap:10px;flex-wrap:wrap;list-style:none;padding:0}
-    .contact a{color:var(--text);text-decoration:none;background:var(--chip);border:1px solid var(--line);padding:7px 10px;border-radius:8px;font-size:0.92rem}
-    .section{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
-    .section h2{margin:0 0 10px;font-size:1.02rem}
-    p{line-height:1.55}
-    .keywords{margin:0;padding:0;list-style:none;display:flex;gap:8px;flex-wrap:wrap}
-    .keywords li{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:0.84rem;color:var(--muted)}
-    .skills-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-    .skill{background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:10px}
-    .skill h3{margin:0 0 7px;font-size:0.95rem;color:#cae0ff}
-    .skill p{margin:0;color:var(--muted);font-size:0.91rem}
-    .item{padding:10px 0;border-top:1px dashed #2a3a5a}
-    .item:first-of-type{border-top:0;padding-top:0}
-    .item h3{margin:0;font-size:0.97rem}
-    .meta{margin:3px 0 0;color:var(--muted);font-size:0.9rem}
-    .item ul,.list{margin:8px 0 0 18px;padding:0}
-    .item li,.list li{margin:5px 0;line-height:1.45;color:var(--text)}
-    .two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    .pdf-note{color:var(--muted);font-size:0.9rem}
-    .reveal{opacity:0;transform:translateY(12px);animation:rise .5s ease forwards}
-    .d1{animation-delay:.08s}
-    .d2{animation-delay:.16s}
-    .d3{animation-delay:.24s}
-    .d4{animation-delay:.32s}
-    .d5{animation-delay:.4s}
-    @keyframes rise{to{opacity:1;transform:translateY(0)}}
-    @media (max-width:860px){
-      .skills-grid,.two-col{grid-template-columns:1fr}
+    nav{display:flex;gap:8px;flex-wrap:wrap}
+    nav a,.theme-toggle{
+      text-decoration:none;
+      border:1px solid var(--line);
+      background:var(--chip);
+      color:var(--text);
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:.84rem;
+      font-weight:700;
     }
-    @media (max-width:520px){
-      .wrap{padding:16px 12px 26px}
-      .name{font-size:1.3rem}
+    .theme-toggle{font-family:inherit;cursor:pointer}
+
+    .layout{margin-top:14px;display:grid;grid-template-columns:.95fr 1.05fr;gap:14px}
+    .panel{border:1px solid var(--line);background:linear-gradient(150deg,var(--panel),var(--panel-2));border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:800;font-size:.88rem}
+    .btn-primary{background:linear-gradient(115deg,var(--accent),var(--accent-2));color:#061224}
+    .btn-secondary{background:var(--chip);border:1px solid var(--line);color:var(--text)}
+
+    .contact{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+    .contact a{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);background:var(--chip);border:1px solid var(--line);padding:9px;border-radius:10px;font-size:.84rem}
+    .icon{width:14px;height:14px;display:inline-block}
+
+    .section-title{margin:0 0 10px;font-size:1.02rem}
+    .summary{color:var(--text);line-height:1.58;font-size:.92rem}
+
+    .matrix{display:grid;gap:8px}
+    .meter{background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:9px}
+    .meter .head{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);margin-bottom:6px}
+    .bar{height:8px;border-radius:999px;background:#273759;overflow:hidden}
+    .fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+
+    .logos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:10px}
+    .logo{display:grid;place-items:center;background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:7px;min-height:52px}
+    .logo img{width:26px;height:26px;object-fit:contain}
+
+    .timeline{position:relative;padding-left:18px;display:grid;gap:12px}
+    .timeline:before{content:"";position:absolute;left:4px;top:2px;bottom:2px;width:2px;background:linear-gradient(var(--accent),transparent)}
+    .event{position:relative;background:var(--chip);border:1px solid var(--line);border-radius:12px;padding:11px}
+    .event:before{content:"";position:absolute;left:-18px;top:14px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+    .event h3{margin:0;font-size:.92rem}
+    .event p{margin:4px 0 0;color:var(--muted);font-size:.8rem}
+    .event ul{margin:8px 0 0 18px;padding:0}
+    .event li{margin:4px 0;color:var(--text);font-size:.85rem;line-height:1.45}
+
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .list-card{background:var(--chip);border:1px solid var(--line);border-radius:12px;padding:12px}
+    .list-card h3{margin:0 0 8px;font-size:.92rem}
+    .list-card ul{margin:0;padding-left:17px}
+    .list-card li{margin:6px 0;font-size:.84rem;color:var(--text)}
+
+    .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+    .kpi{background:var(--chip);border:1px solid var(--line);border-radius:12px;padding:10px}
+    .kpi b{display:block;font-size:1.1rem;color:var(--accent)}
+    .kpi span{font-size:.79rem;color:var(--muted)}
+    .snapshot{margin-top:14px;background:var(--chip);border:1px solid var(--line);border-radius:14px;padding:14px}
+    .snapshot h3{margin:0 0 10px;font-size:.95rem}
+    .snapshot-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .snapshot-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px}
+    .snapshot-card b{display:block;font-size:.8rem;color:var(--accent);margin-bottom:6px}
+    .snapshot-card p,.snapshot-card li{font-size:.8rem;line-height:1.45;color:var(--text)}
+    .snapshot-card ul{margin:0;padding-left:16px}
+
+    .reveal{opacity:0;transform:translateY(12px);animation:rise .55s ease forwards}
+    .d1{animation-delay:.09s}.d2{animation-delay:.18s}.d3{animation-delay:.27s}
+    @keyframes rise{to{opacity:1;transform:translateY(0)}}
+
+    @media (max-width:980px){
+      .layout{grid-template-columns:1fr}
+      .logos{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .contact{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .wrap{padding:16px 12px 28px}
+      .title h1{font-size:1.56rem}
+      .kpis{grid-template-columns:1fr}
+      .snapshot-grid{grid-template-columns:1fr}
+    }
+    @media print{
+      .nav-wrap,.actions,.contact,.logos,.theme-toggle{display:none !important}
+      body{background:#fff;color:#000}
+      .panel,.snapshot,.snapshot-card{background:#fff;border:1px solid #d5d5d5;box-shadow:none}
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="top">
-      <div>
-        <h1 class="name">Karthik Sridatta</h1>
+      <div class="title">
+        <p>RESUME DASHBOARD</p>
+        <h1>Karthik Sridatta</h1>
         <p class="role">Software Engineer | AI/ML Developer | Backend Specialist | Prompt Engineer</p>
       </div>
       <div class="nav-wrap">
+        <a class="theme-toggle" href="#snapshot">One-Page Snapshot</a>
         <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light and dark theme">Theme</button>
         <nav aria-label="Resume navigation">
           <a href="/">Home</a>
@@ -101,136 +157,169 @@
       </div>
     </header>
 
-    <div class="actions">
-      <a class="btn btn-primary" href="/Karthik_Sridatta_ATS_Final.pdf" target="_blank" rel="noopener noreferrer">Open PDF Resume</a>
-      <a class="btn btn-secondary" href="/">Back to Home</a>
-    </div>
-
-    <ul class="contact" aria-label="Contact information">
-      <li><a href="tel:+918050925351">+91 8050925351</a></li>
-      <li><a href="mailto:bkarthik5351@gmail.com">bkarthik5351@gmail.com</a></li>
-      <li><a href="https://www.linkedin.com/in/karthik-sridatta1" target="_blank" rel="noopener noreferrer">linkedin.com/in/karthik-sridatta1</a></li>
-      <li><a href="https://github.com/karthik-sridatta" target="_blank" rel="noopener noreferrer">github.com/karthik-sridatta</a></li>
-      <li><a href="https://maps.google.com/?q=Bangalore,+India" target="_blank" rel="noopener noreferrer">Bangalore, India</a></li>
-    </ul>
-
-    <section class="section reveal" aria-label="Professional summary">
-      <h2>Professional Summary</h2>
-      <p>ISE student (CGPA 8.68/10) at DSATM Bangalore focused on backend engineering and AI/ML systems. Built production-grade applications using Python, Django, Flask, and REST APIs. Strong in data structures and algorithms, system design, NLP, deep learning, and prompt engineering. Seeking 3-12 month Software Engineering or AI/ML internship roles with immediate availability.</p>
-      <ul class="keywords" aria-label="ATS keywords">
-        <li>Python</li>
-        <li>Django</li>
-        <li>FastAPI</li>
-        <li>REST APIs</li>
-        <li>Machine Learning</li>
-        <li>NLP</li>
-        <li>System Design</li>
-        <li>DSA</li>
-      </ul>
-    </section>
-
-    <section class="section reveal d1" aria-label="Technical skills">
-      <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <article class="skill"><h3>Languages</h3><p>Python (Primary), C, C++, Java, JavaScript, SQL</p></article>
-        <article class="skill"><h3>AI / ML</h3><p>Machine Learning, Deep Learning, NLP, CNNs, LangChain, HuggingFace, Scikit-learn, TensorFlow, PyTorch</p></article>
-        <article class="skill"><h3>Web / APIs</h3><p>Django, Flask, FastAPI, React.js, Node.js, REST APIs, Microservices, Spring Boot</p></article>
-        <article class="skill"><h3>Databases</h3><p>MySQL, PostgreSQL, MongoDB, Firebase</p></article>
-        <article class="skill"><h3>Cloud / DevOps</h3><p>AWS, Docker, CI/CD, Git, GitHub, Linux</p></article>
-        <article class="skill"><h3>Core CS</h3><p>Data Structures and Algorithms, OOP, System Design, DBMS, Complexity Analysis</p></article>
-      </div>
-    </section>
-
-    <section class="section reveal d2" aria-label="Professional experience">
-      <h2>Professional Experience</h2>
-      <article class="item">
-        <h3>Software Development Engineer Intern - InternPro</h3>
-        <p class="meta">Aug 2025 - Sep 2025 | Bangalore, India | Python, Django, REST APIs, Agile</p>
-        <ul>
-          <li>Engineered backend data pipelines using Python and Django, reducing latency through optimized data structure and algorithm selection.</li>
-          <li>Delivered production-ready features across two Agile sprints with zero rollbacks through disciplined Git version control.</li>
-          <li>Designed and documented RESTful API endpoints, improving frontend integration velocity across teams.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="projects" class="section reveal d3" aria-label="Technical projects">
-      <h2>Technical Projects</h2>
-      <article class="item">
-        <h3>Decentralised Online Voting System</h3>
-        <p class="meta">Python, Django, Blockchain, JWT, REST APIs | 2024 - 2025</p>
-        <ul>
-          <li>Architected a tamper-proof voting platform with 99.9% uptime and 100% data integrity in testing.</li>
-          <li>Implemented JWT-based RBAC and scalable APIs with cryptographic hash audit validation.</li>
-        </ul>
-      </article>
-      <article class="item">
-        <h3>AI-Driven E-Commerce Dark Pattern Detector</h3>
-        <p class="meta">Python, Deep Learning, CNNs, NLP, REST API | 2024</p>
-        <ul>
-          <li>Built CNN and NLP classifiers across 10,000+ UI elements, reaching 91% detection accuracy.</li>
-          <li>Exposed the model as a REST API for browser-extension-ready real-time analysis.</li>
-        </ul>
-      </article>
-      <article class="item">
-        <h3>Agri-Tech Crop Management and IoT Marketplace</h3>
-        <p class="meta">Flask, IoT, Firebase, PostgreSQL | 2024</p>
-        <ul>
-          <li>Engineered real-time crop health monitoring using scalable multi-sensor IoT data pipelines.</li>
-          <li>Integrated a direct-to-consumer marketplace, improving farmer revenue by an estimated 15%.</li>
-        </ul>
-      </article>
-      <article class="item">
-        <h3>Poverty Awareness and AI Recommendation Platform</h3>
-        <p class="meta">React.js, Flask, Machine Learning | 2023</p>
-        <ul>
-          <li>Developed a full-stack platform with personalized ML recommendations on demographic data.</li>
-          <li>Built reusable React components backed by a decoupled Flask REST API layer.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section id="education" class="section reveal d4" aria-label="Education achievements and certifications">
-      <h2>Education, Achievements and Certifications</h2>
-      <div class="two-col">
-        <div>
-          <h3>Education</h3>
-          <ul class="list">
-            <li>B.E. Information Science and Engineering, Dayananda Sagar Academy of Technology and Management, Bangalore (Oct 2023 - Present), CGPA: 8.68 / 10.0</li>
-            <li>Class XII CBSE, Sri Chaitanya Techno School, Bangalore (Mar 2020 - May 2023), 75%</li>
-          </ul>
-          <h3>Achievements and Awards</h3>
-          <ul class="list">
-            <li>Winner - PES University CIDECODE Cyber Hackathon (AI/ML in Cybersecurity, National Level)</li>
-            <li>Top-5 Finalist - National Coding Championship, Competitive Programming Track</li>
-            <li>Champion - VTU Youth Festival Quiz Competition (University Level)</li>
-            <li>Champion - RNSIT Intercollegiate Quiz Competition</li>
-            <li>Second Runner-Up - National Hackathon, Software Development Track</li>
-            <li>Organizer - Planned and executed a 500-student intercollegiate hackathon at DSATM Bangalore</li>
-          </ul>
+    <main class="layout">
+      <section class="panel reveal" aria-label="Profile overview">
+        <div class="actions">
+          <a class="btn btn-primary" href="/Karthik_Sridatta_ATS_Final.pdf" target="_blank" rel="noopener noreferrer">Open PDF Resume</a>
+          <a class="btn btn-secondary" href="/">Back to Home</a>
         </div>
-        <div>
+
+        <ul class="contact" aria-label="Contact information">
+          <li><a href="tel:+918050925351"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.7 15.7 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.08.36 2.24.56 3.42.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.2 21 3 13.8 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.18.2 2.34.56 3.42a1 1 0 0 1-.24 1z"/></svg>+91 8050925351</a></li>
+          <li><a href="mailto:bkarthik5351@gmail.com"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2 8 5 8-5"/></svg>bkarthik5351@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/karthik-sridatta1" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/karthik-rocker" target="_blank" rel="noopener noreferrer">GitHub (Primary)</a></li>
+          <li><a href="https://github.com/1dt23is030-cmd?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub (Secondary)</a></li>
+        </ul>
+
+        <article style="margin-top:12px">
+          <h2 class="section-title">Professional Summary</h2>
+          <p class="summary">ISE student (CGPA 8.68/10) with practical experience in backend engineering, machine learning, and AI product delivery. Built production-level systems in Python, Django, Flask, and REST APIs, with hands-on work in CNNs, NLP, and prompt engineering. Seeking high-impact internship opportunities in AI/ML and software engineering.</p>
+        </article>
+
+        <article style="margin-top:10px">
+          <h2 class="section-title">Capability Meters</h2>
+          <div class="matrix">
+            <div class="meter"><div class="head"><span>AI/ML Engineering</span><b>91%</b></div><div class="bar"><div class="fill" style="width:91%"></div></div></div>
+            <div class="meter"><div class="head"><span>Backend Development</span><b>90%</b></div><div class="bar"><div class="fill" style="width:90%"></div></div></div>
+            <div class="meter"><div class="head"><span>System Design and DSA</span><b>88%</b></div><div class="bar"><div class="fill" style="width:88%"></div></div></div>
+            <div class="meter"><div class="head"><span>Prompt Engineering</span><b>87%</b></div><div class="bar"><div class="fill" style="width:87%"></div></div></div>
+          </div>
+        </article>
+
+        <article style="margin-top:10px">
+          <h2 class="section-title">Technology Logos</h2>
+          <div class="logos">
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux logo" /></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel reveal d1" aria-label="Experience and projects timeline">
+        <h2 class="section-title">Experience and Project Timeline</h2>
+        <div class="timeline">
+          <article class="event">
+            <h3>Software Development Engineer Intern - InternPro</h3>
+            <p>Aug 2025 - Sep 2025 | Python, Django, REST APIs</p>
+            <ul>
+              <li>Built backend data pipelines with lower latency through better algorithm selection.</li>
+              <li>Delivered production features over two Agile sprints with zero rollbacks.</li>
+              <li>Designed REST endpoints that improved frontend integration speed.</li>
+            </ul>
+          </article>
+          <article class="event" id="projects">
+            <h3>Decentralised Online Voting System</h3>
+            <p>2024 - 2025 | Blockchain, JWT, Django</p>
+            <ul>
+              <li>Achieved 99.9% uptime and 100% integrity in test scenarios.</li>
+              <li>Implemented RBAC with JWT and hash-based audit tracking.</li>
+            </ul>
+          </article>
+          <article class="event">
+            <h3>AI Dark Pattern Detector</h3>
+            <p>2024 | CNN, NLP, REST API</p>
+            <ul>
+              <li>Trained on 10,000+ UI elements and reached 91% accuracy.</li>
+              <li>Published as a real-time inference API for browser workflows.</li>
+            </ul>
+          </article>
+          <article class="event">
+            <h3>Agri-Tech Crop and IoT Marketplace</h3>
+            <p>2024 | Flask, IoT, Firebase, PostgreSQL</p>
+            <ul>
+              <li>Engineered real-time sensor ingestion pipelines for crop monitoring.</li>
+              <li>Created marketplace flows increasing farmer revenue by an estimated 15%.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <section class="panel reveal d2" id="education" aria-label="Education and achievements">
+      <h2 class="section-title">Education, Achievements, Certifications</h2>
+      <div class="kpis">
+        <div class="kpi"><b>8.68</b><span>CGPA in ISE</span></div>
+        <div class="kpi"><b>Top 5</b><span>National coding finalist</span></div>
+        <div class="kpi"><b>500</b><span>Students hackathon scale</span></div>
+      </div>
+      <div class="grid-2" style="margin-top:10px">
+        <article class="list-card">
+          <h3>Education</h3>
+          <ul>
+            <li>B.E. Information Science and Engineering, DSATM Bangalore (2023 - Present), CGPA 8.68 / 10.0</li>
+            <li>Class XII CBSE, Sri Chaitanya Techno School, Bangalore (2020 - 2023), 75%</li>
+          </ul>
+          <h3 style="margin-top:10px">Achievements</h3>
+          <ul>
+            <li>Winner, PES University CIDECODE Cyber Hackathon (National Level)</li>
+            <li>Top-5 Finalist, National Coding Championship</li>
+            <li>Champion, VTU Youth Festival and RNSIT Intercollegiate Quiz</li>
+            <li>Second Runner-Up, National Hackathon (Software Track)</li>
+          </ul>
+        </article>
+        <article class="list-card">
           <h3>Certifications</h3>
-          <ul class="list">
+          <ul>
             <li>NPTEL - Data Structures and Algorithms</li>
             <li>Coursera - SQL and Data Analytics</li>
             <li>Great Learning - AI Fundamentals</li>
-            <li>Infosys Springboard - Python Programming and C Programming</li>
+            <li>Infosys Springboard - Python and C Programming</li>
             <li>Tata Group - Data Visualization</li>
             <li>MindLuster - Web Development</li>
           </ul>
-          <h3>Additional Information</h3>
-          <ul class="list">
-            <li>Availability: Open to 3-12 month internships (on-site Bangalore or remote), immediate start.</li>
-            <li>Target Roles: AI/ML Engineer Intern, Backend Developer Intern, GenAI Developer Intern, Data Science Intern, Full-Stack Engineer Intern.</li>
-            <li>Interests: Generative AI, Large Language Models, RAG Systems, Competitive Programming, Open Source Contribution.</li>
-            <li>Languages: English (Professional), Kannada (Native), Hindi (Conversational).</li>
+          <h3 style="margin-top:10px">Additional Information</h3>
+          <ul>
+            <li>Open to 3-12 month internships, immediate start.</li>
+            <li>Target roles: AI/ML Intern, Backend Intern, GenAI Intern, Data Science Intern.</li>
+            <li>Interests: LLMs, RAG systems, competitive programming, open source.</li>
+            <li>Languages: English, Kannada, Hindi.</li>
           </ul>
+        </article>
+      </div>
+      <p style="margin:10px 0 0;color:var(--muted);font-size:.84rem">PDF file: <a href="/Karthik_Sridatta_ATS_Final.pdf" style="color:var(--accent)">Karthik_Sridatta_ATS_Final.pdf</a></p>
+    </section>
+
+    <section class="panel reveal d3" id="snapshot" aria-label="One-page recruiter snapshot">
+      <h2 class="section-title">One-Page Recruiter Snapshot</h2>
+      <div class="snapshot">
+        <h3>AI/ML and Backend Internship Profile</h3>
+        <div class="snapshot-grid">
+          <article class="snapshot-card">
+            <b>Identity</b>
+            <p>Karthik Sridatta, ISE student at DSATM (CGPA 8.68), focused on scalable APIs and applied AI systems.</p>
+          </article>
+          <article class="snapshot-card">
+            <b>Top Skills</b>
+            <ul>
+              <li>Python, Django, Flask, FastAPI, REST APIs</li>
+              <li>NLP, CNNs, TensorFlow, PyTorch</li>
+              <li>DSA, System Design, Prompt Engineering</li>
+            </ul>
+          </article>
+          <article class="snapshot-card">
+            <b>Notable Metrics</b>
+            <ul>
+              <li>91% model accuracy (Dark Pattern Detector)</li>
+              <li>99.9% uptime in blockchain voting project</li>
+              <li>500-student hackathon organizer</li>
+            </ul>
+          </article>
         </div>
       </div>
-      <p class="pdf-note">PDF file: <a href="/Karthik_Sridatta_ATS_Final.pdf" style="color:var(--accent)">Karthik_Sridatta_ATS_Final.pdf</a></p>
     </section>
   </div>
+
   <script>
     (function(){
       var root = document.documentElement;
@@ -246,7 +335,7 @@
       if (!button) return;
       var setLabel = function(){
         var current = root.getAttribute("data-theme") === "light" ? "light" : "dark";
-        button.textContent = current === "light" ? "Dark Mode" : "Light Mode";
+        button.textContent = current === "light" ? "Dark" : "Light";
       };
       setLabel();
       button.addEventListener("click", function(){
