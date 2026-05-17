@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Karthik Sridatta portfolio featuring AI development, backend engineering projects, and internship-ready experience." />
   <title>Karthik Sridatta | AI Engineer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -65,6 +66,27 @@
       font-weight:600;
     }
     .theme-toggle{font-family:inherit;cursor:pointer}
+    a,button{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+    a:hover,button:hover{transform:translateY(-1px)}
+    a:focus-visible,button:focus-visible{
+      outline:2px solid var(--accent);
+      outline-offset:2px;
+      box-shadow:0 0 0 4px rgba(76,244,225,.22);
+    }
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:-42px;
+      background:var(--accent);
+      color:#041021;
+      padding:8px 12px;
+      border-radius:8px;
+      font-size:.84rem;
+      font-weight:700;
+      text-decoration:none;
+      z-index:20;
+    }
+    .skip-link:focus{top:12px}
 
     .hero{margin-top:16px;display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
     .hero-main,.hero-side,.panel{
@@ -137,6 +159,10 @@
     .reveal{opacity:0;transform:translateY(12px);animation:rise .55s ease forwards}
     .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.32s}
     @keyframes rise{to{opacity:1;transform:translateY(0)}}
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none !important}
+      .reveal{opacity:1;transform:none}
+    }
 
     @media (max-width:980px){
       .hero{grid-template-columns:1fr}
@@ -153,6 +179,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="container">
     <header class="topbar">
       <div class="wordmark">
@@ -170,7 +197,7 @@
       </div>
     </header>
 
-    <section class="hero reveal" aria-label="AI profile overview">
+    <section id="main-content" class="hero reveal" aria-label="AI profile overview">
       <article class="hero-main">
         <p class="eyebrow">AI ENGINEERING PROFILE</p>
         <h1>Karthik Sridatta<br />Building backend systems and applied AI products that scale.</h1>
@@ -202,20 +229,21 @@
         <li><a href="https://www.linkedin.com/in/karthik-sridatta1" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6 8h3v10H6zM7.5 3.5A1.75 1.75 0 1 1 7.5 7a1.75 1.75 0 0 1 0-3.5zM11 8h2.9v1.4h.04c.4-.75 1.4-1.55 2.9-1.55 3.1 0 3.66 2.04 3.66 4.69V18h-3V13c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.3-1.93 2.65V18h-3z"/></svg>LinkedIn</a></li>
         <li><a href="https://github.com/karthik-rocker" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A12 12 0 0 0 8.2 23c.6.12.82-.26.82-.58v-2.05c-3.34.72-4.04-1.41-4.04-1.41a3.18 3.18 0 0 0-1.34-1.77c-1.1-.74.08-.72.08-.72a2.5 2.5 0 0 1 1.83 1.22 2.54 2.54 0 0 0 3.46 1 2.54 2.54 0 0 1 .76-1.6c-2.66-.3-5.46-1.32-5.46-5.88a4.6 4.6 0 0 1 1.22-3.2 4.28 4.28 0 0 1 .12-3.16s1-.32 3.3 1.22a11.2 11.2 0 0 1 6 0c2.3-1.54 3.3-1.22 3.3-1.22.56 1.38.42 2.58.12 3.16a4.59 4.59 0 0 1 1.22 3.2c0 4.57-2.81 5.57-5.5 5.86a2.85 2.85 0 0 1 .82 2.2v3.27c0 .32.22.7.82.58A12 12 0 0 0 12 .5z"/></svg>GitHub (Primary)</a></li>
         <li><a href="https://github.com/1dt23is030-cmd?tab=repositories" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A12 12 0 0 0 8.2 23c.6.12.82-.26.82-.58v-2.05c-3.34.72-4.04-1.41-4.04-1.41a3.18 3.18 0 0 0-1.34-1.77c-1.1-.74.08-.72.08-.72a2.5 2.5 0 0 1 1.83 1.22 2.54 2.54 0 0 0 3.46 1 2.54 2.54 0 0 1 .76-1.6c-2.66-.3-5.46-1.32-5.46-5.88a4.6 4.6 0 0 1 1.22-3.2 4.28 4.28 0 0 1 .12-3.16s1-.32 3.3 1.22a11.2 11.2 0 0 1 6 0c2.3-1.54 3.3-1.22 3.3-1.22.56 1.38.42 2.58.12 3.16a4.59 4.59 0 0 1 1.22 3.2c0 4.57-2.81 5.57-5.5 5.86a2.85 2.85 0 0 1 .82 2.2v3.27c0 .32.22.7.82.58A12 12 0 0 0 12 .5z"/></svg>GitHub (Secondary)</a></li>
+        <li><a href="https://github.com/karthik-rocker/civil-ai-agent" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm3 3v2h10V7zm0 4v2h10v-2z"/></svg>Featured Repo</a></li>
       </ul>
     </section>
 
     <section id="stack" class="panel reveal d2" aria-label="Technology logos">
       <h2 class="section-title">Tech Stack Logos</h2>
       <div class="logo-strip">
-        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" /></div>
-        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" /></div>
-        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask logo" /></div>
-        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI logo" /></div>
-        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow logo" /></div>
-        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch logo" /></div>
-        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" /></div>
-        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" /></div>
+        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" loading="lazy" decoding="async" /></div>
+        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" loading="lazy" decoding="async" /></div>
+        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask logo" loading="lazy" decoding="async" /></div>
+        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI logo" loading="lazy" decoding="async" /></div>
+        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow logo" loading="lazy" decoding="async" /></div>
+        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch logo" loading="lazy" decoding="async" /></div>
+        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" loading="lazy" decoding="async" /></div>
+        <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" loading="lazy" decoding="async" /></div>
       </div>
     </section>
 
@@ -251,7 +279,7 @@
           <p>Tamper-proof voting workflow with blockchain-backed integrity checks, RBAC, and secure JWT-based access control.</p>
           <div class="tags"><span>Django</span><span>Blockchain</span><span>JWT</span></div>
           <div class="card-actions">
-            <a href="https://github.com/karthik-rocker" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+            <a href="https://github.com/karthik-rocker/civil-ai-agent" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
             <a href="/resume.html#projects">Case Study</a>
           </div>
         </article>

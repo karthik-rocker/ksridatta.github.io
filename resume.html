@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Resume dashboard of Karthik Sridatta highlighting AI/ML, backend engineering, projects, and achievements." />
   <title>Karthik Sridatta | AI Resume</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -62,6 +63,27 @@
       font-weight:700;
     }
     .theme-toggle{font-family:inherit;cursor:pointer}
+    a,button{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+    a:hover,button:hover{transform:translateY(-1px)}
+    a:focus-visible,button:focus-visible{
+      outline:2px solid var(--accent);
+      outline-offset:2px;
+      box-shadow:0 0 0 4px rgba(76,244,225,.22);
+    }
+    .skip-link{
+      position:absolute;
+      left:12px;
+      top:-42px;
+      background:var(--accent);
+      color:#041021;
+      padding:8px 12px;
+      border-radius:8px;
+      font-size:.84rem;
+      font-weight:700;
+      text-decoration:none;
+      z-index:20;
+    }
+    .skip-link:focus{top:12px}
 
     .layout{margin-top:14px;display:grid;grid-template-columns:.95fr 1.05fr;gap:14px}
     .panel{border:1px solid var(--line);background:linear-gradient(150deg,var(--panel),var(--panel-2));border-radius:18px;padding:16px;box-shadow:var(--shadow)}
@@ -118,6 +140,10 @@
     .reveal{opacity:0;transform:translateY(12px);animation:rise .55s ease forwards}
     .d1{animation-delay:.09s}.d2{animation-delay:.18s}.d3{animation-delay:.27s}
     @keyframes rise{to{opacity:1;transform:translateY(0)}}
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none !important}
+      .reveal{opacity:1;transform:none}
+    }
 
     @media (max-width:980px){
       .layout{grid-template-columns:1fr}
@@ -139,6 +165,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="wrap">
     <header class="top">
       <div class="title">
@@ -157,7 +184,7 @@
       </div>
     </header>
 
-    <main class="layout">
+    <main id="main-content" class="layout">
       <section class="panel reveal" aria-label="Profile overview">
         <div class="actions">
           <a class="btn btn-primary" href="/Karthik_Sridatta_ATS_Final.pdf" target="_blank" rel="noopener noreferrer">Open PDF Resume</a>
@@ -170,6 +197,7 @@
           <li><a href="https://www.linkedin.com/in/karthik-sridatta1" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://github.com/karthik-rocker" target="_blank" rel="noopener noreferrer">GitHub (Primary)</a></li>
           <li><a href="https://github.com/1dt23is030-cmd?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub (Secondary)</a></li>
+          <li><a href="https://github.com/karthik-rocker/civil-ai-agent" target="_blank" rel="noopener noreferrer">Featured Repo</a></li>
         </ul>
 
         <article style="margin-top:12px">
@@ -190,18 +218,18 @@
         <article style="margin-top:10px">
           <h2 class="section-title">Technology Logos</h2>
           <div class="logos">
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" /></div>
-            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux logo" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" loading="lazy" decoding="async" /></div>
+            <div class="logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux logo" loading="lazy" decoding="async" /></div>
           </div>
         </article>
       </section>
