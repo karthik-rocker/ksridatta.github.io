@@ -33,6 +33,30 @@
       --chip:#edf3ff;
       --shadow:0 12px 24px rgba(32,62,112,.14);
     }
+    :root[data-theme="aurora"]{
+      --bg:#071017;
+      --panel:#0f1d28;
+      --panel-2:#163247;
+      --text:#e9fbff;
+      --muted:#91bfc9;
+      --accent:#69ffc8;
+      --accent-2:#6ec6ff;
+      --line:#27506a;
+      --chip:#123044;
+      --shadow:0 16px 34px rgba(1,13,20,.5);
+    }
+    :root[data-theme="sunset"]{
+      --bg:#1a0c10;
+      --panel:#2a1218;
+      --panel-2:#3a1d22;
+      --text:#fff0e7;
+      --muted:#edbca7;
+      --accent:#ff9f5c;
+      --accent-2:#ff5f8a;
+      --line:#6a2f39;
+      --chip:#331920;
+      --shadow:0 16px 34px rgba(24,6,10,.5);
+    }
     *{box-sizing:border-box}
     html,body{margin:0}
     body{
@@ -52,7 +76,7 @@
 
     .nav-wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
     nav{display:flex;gap:8px;flex-wrap:wrap}
-    nav a,.theme-toggle{
+    nav a,.theme-select{
       text-decoration:none;
       border:1px solid var(--line);
       background:var(--chip);
@@ -62,7 +86,7 @@
       font-size:.84rem;
       font-weight:700;
     }
-    .theme-toggle{font-family:inherit;cursor:pointer}
+    .theme-select{font-family:inherit;cursor:pointer;appearance:none;padding-right:28px}
     a,button{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
     a:hover,button:hover{transform:translateY(-1px)}
     a:focus-visible,button:focus-visible{
@@ -158,7 +182,7 @@
       .snapshot-grid{grid-template-columns:1fr}
     }
     @media print{
-      .nav-wrap,.actions,.contact,.logos,.theme-toggle{display:none !important}
+      .nav-wrap,.actions,.contact,.logos,.theme-select{display:none !important}
       body{background:#fff;color:#000}
       .panel,.snapshot,.snapshot-card{background:#fff;border:1px solid #d5d5d5;box-shadow:none}
     }
@@ -174,8 +198,13 @@
         <p class="role">Software Engineer | AI/ML Developer | Backend Specialist | Prompt Engineer</p>
       </div>
       <div class="nav-wrap">
-        <a class="theme-toggle" href="#snapshot">One-Page Snapshot</a>
-        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle light and dark theme">Theme</button>
+        <a class="theme-select" href="#snapshot">One-Page Snapshot</a>
+        <select id="themeSelect" class="theme-select" aria-label="Select visual theme">
+          <option value="dark">Theme: Dark</option>
+          <option value="light">Theme: Light</option>
+          <option value="aurora">Theme: Aurora</option>
+          <option value="sunset">Theme: Sunset</option>
+        </select>
         <nav aria-label="Resume navigation">
           <a href="/">Home</a>
           <a href="#projects">Projects</a>
@@ -352,25 +381,25 @@
     (function(){
       var root = document.documentElement;
       var key = "portfolio-theme";
+      var allowed = ["dark", "light", "aurora", "sunset"];
       var stored = localStorage.getItem(key);
       var prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
-      if (stored === "light" || stored === "dark") {
+      if (allowed.indexOf(stored) !== -1) {
         root.setAttribute("data-theme", stored);
       } else if (prefersLight) {
         root.setAttribute("data-theme", "light");
+      } else {
+        root.setAttribute("data-theme", "dark");
       }
-      var button = document.getElementById("themeToggle");
-      if (!button) return;
-      var setLabel = function(){
-        var current = root.getAttribute("data-theme") === "light" ? "light" : "dark";
-        button.textContent = current === "light" ? "Dark" : "Light";
-      };
-      setLabel();
-      button.addEventListener("click", function(){
-        var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      var select = document.getElementById("themeSelect");
+      if (!select) return;
+      var currentTheme = root.getAttribute("data-theme") || "dark";
+      select.value = allowed.indexOf(currentTheme) !== -1 ? currentTheme : "dark";
+      select.addEventListener("change", function(){
+        var next = select.value;
+        if (allowed.indexOf(next) === -1) return;
         root.setAttribute("data-theme", next);
         localStorage.setItem(key, next);
-        setLabel();
       });
     })();
   </script>
